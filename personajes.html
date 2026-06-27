@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Personajes | Universo de Juego de Tronos</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <header class="page-header">
+    <h1>Universo de Juego de Tronos</h1>
+    <p>Explora los personajes y encuentra el que más te representa.</p>
+  </header>
+
+  <nav class="main-nav">
+    <p>Universo de Juego de Tronos</p>
+
+    <div class="nav-links">
+      <a href="index.html">Principal</a>
+      <a class="active" href="personajes.html">Personajes</a>
+    </div>
+  </nav>
+
+  <main>
+    <section class="section quiz-section">
+      <h2>¿Qué personaje te representa?</h2>
+
+      <p class="section-text">
+        Responde estas preguntas y descubre qué personaje se relaciona más contigo.
+      </p>
+
+      <form id="quizForm" class="quiz-box">
+        <label>
+          ¿Qué cualidad te representa más?
+          <select id="valor" required>
+            <option value="">Selecciona una respuesta</option>
+            <option value="liderazgo">Liderazgo</option>
+            <option value="lealtad">Lealtad</option>
+            <option value="estrategia">Estrategia</option>
+            <option value="valentia">Valentía</option>
+            <option value="ambicion">Ambición</option>
+          </select>
+        </label>
+
+        <label>
+          ¿Cómo actuarías ante una situación difícil?
+          <select id="decision" required>
+            <option value="">Selecciona una respuesta</option>
+            <option value="proteger">Proteger a los demás</option>
+            <option value="analizar">Pensar antes de actuar</option>
+            <option value="enfrentar">Enfrentar el problema</option>
+            <option value="adaptarse">Buscar la mejor salida</option>
+            <option value="mandar">Tomar el control</option>
+          </select>
+        </label>
+
+        <label>
+          ¿Qué tipo de personaje te llama más la atención?
+          <select id="tipo" required>
+            <option value="">Selecciona una respuesta</option>
+            <option value="heroe">Un héroe reservado</option>
+            <option value="guerrera">Una persona valiente e independiente</option>
+            <option value="reina">Una persona con poder y decisión</option>
+            <option value="inteligente">Alguien inteligente y estratégico</option>
+            <option value="familiar">Alguien protector con su familia</option>
+          </select>
+        </label>
+
+        <button type="submit">Ver mi personaje</button>
+      </form>
+
+      <div id="resultadoQuiz" class="quiz-result hidden"></div>
+    </section>
+
+    <section class="section">
+      <div class="section-head">
+        <div>
+          <h2>Personajes de la serie</h2>
+          <p class="section-text">Busca y revisa los personajes disponibles.</p>
+        </div>
+
+        <input type="search" id="buscador" placeholder="Buscar personaje..." />
+      </div>
+
+      <div id="estado" class="status">Cargando personajes...</div>
+      <div id="personajesGrid" class="characters-grid"></div>
+    </section>
+  </main>
+
+  <div id="modal" class="modal hidden">
+    <div class="modal-content">
+      <button id="cerrarModal" class="close">×</button>
+      <img id="modalImagen" src="" alt="" />
+      <h2 id="modalNombre"></h2>
+      <p id="modalTitulo"></p>
+      <p><b>Familia:</b> <span id="modalFamilia"></span></p>
+      <p><b>Nombre completo:</b> <span id="modalCompleto"></span></p>
+      <p><b>Identificación:</b> <span id="modalId"></span></p>
+    </div>
+  </div>
+
+  <footer>
+    <p>Universo de Juego de Tronos - Grupo 23</p>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
