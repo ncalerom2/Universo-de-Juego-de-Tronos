@@ -9,10 +9,11 @@ const quizForm = document.getElementById("quizForm");
 
 let personajes = [];
 
+// aquí se cargan los personajes desde la API
 async function cargarPersonajes() {
   try {
-    const respuesta = await fetch(API_URL);
-    personajes = await respuesta.json();
+    const res = await fetch(API_URL);
+    personajes = await res.json();
 
     if (personajesGrid) {
       renderizarPersonajes(personajes.slice(0, 24));
@@ -28,6 +29,7 @@ async function cargarPersonajes() {
   }
 }
 
+// muestra las tarjetas en la página
 function renderizarPersonajes(lista) {
   personajesGrid.innerHTML = "";
 
@@ -56,6 +58,7 @@ function renderizarPersonajes(lista) {
   });
 }
 
+// abre la ventana con la información del personaje
 function abrirModal(personaje) {
   if (!modal || !personaje) return;
 
@@ -84,6 +87,7 @@ if (modal) {
   });
 }
 
+// buscador sencillo por nombre, familia o título
 if (buscador) {
   buscador.addEventListener("input", () => {
     const texto = buscador.value.toLowerCase();
@@ -100,6 +104,7 @@ if (buscador) {
   });
 }
 
+// test para relacionar respuestas con un personaje
 if (quizForm) {
   quizForm.addEventListener("submit", e => {
     e.preventDefault();
